@@ -1,0 +1,1 @@
+LangChain is a framework that enables applications to use LLMs effectively by connecting them with external data and logic. It allows loading documents, splitting them, generating embeddings, and querying with retrieval-augmented generation.
