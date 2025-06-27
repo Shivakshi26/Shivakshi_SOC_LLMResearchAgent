@@ -10,20 +10,20 @@ model = ChatGroq(
     temperature=0.1,
 )
 
-promt1 = PromptTemplate(
+prompt1 = PromptTemplate(
     template= ' Generate a detailed report on {topic}',
     input_variables= ['topic']
 )
-promt2 = PromptTemplate( 
-    template= ' Generate a 5 pointer summary from the following text \n {text}',
+prompt2 = PromptTemplate( 
+    template= ' Generate a 5 point summary from the following text \n {text}',
     input_variables= ['text']
 )
 
 parser = StrOutputParser()
 
-chain = promt1 | model | parser | promt2 | model | parser 
+chain = prompt1 | model | parser | prompt2 | model | parser 
 
-result = chain.invoke({'topic':'IITs'})
+result = chain.invoke({'topic':'Math'})
 
 print(result)
 
