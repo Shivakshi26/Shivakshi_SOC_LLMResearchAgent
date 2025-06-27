@@ -10,15 +10,15 @@ model = ChatGroq(
     temperature=0.1,
 )
 
-promt = PromptTemplate(
-    template= ' Generate 5 interesting facts about the {topic}',
+prompt = PromptTemplate(
+    template= ' Generate 5 facts about the {topic}',
     input_variables= ['topic']
 )
 
 parser = StrOutputParser()
 
-chain = promt | model | parser 
+chain = prompt | model | parser 
 
-result = chain.invoke({'topic':'Indore'})
+result = chain.invoke({'topic':'Delhi'})
 
 chain.get_graph().print_ascii()
