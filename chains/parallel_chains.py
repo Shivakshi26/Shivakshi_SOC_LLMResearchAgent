@@ -41,40 +41,86 @@ merge_chain = prompt3 | model | parser
 
 chain = parallel_chain | merge_chain 
 
-text = """
-Linear regression is a statistical method used to model the relationship between a dependent variable and one or more independent variables by fitting a linear equation to the observed data. It aims to find the "best fit" line (or hyperplane in higher dimensions) that represents the relationship between the variables. 
-Key Concepts:
-Dependent Variable:
-The variable being predicted or explained (often denoted as 'y'). 
-Independent Variable(s):
-The variable(s) used to predict the dependent variable (often denoted as 'x'). 
-Linear Equation:
-The equation of a line (or hyperplane) that represents the relationship, e.g., y = mx + b for simple linear regression. 
-Coefficients:
-The values 'm' (slope) and 'b' (intercept) in the linear equation that define the line's position and orientation. 
-Residuals:
-The differences between the actual values and the predicted values by the model. Minimizing the sum of squared residuals is a common goal in linear regression. 
-Types of Linear Regression: 
-Simple Linear Regression: Involves one independent variable and one dependent variable. 
-Multiple Linear Regression: Involves two or more independent variables and one dependent variable. 
-Applications:
-Prediction:
-Estimating the value of a dependent variable based on the values of independent variables. 
-Understanding Relationships:
-Identifying the strength and direction of the relationship between variables. 
-Business and Finance:
-Analyzing sales data, predicting stock prices, and understanding customer behavior. 
-Machine Learning:
-Linear regression is a fundamental supervised learning algorithm used for classification and regression tasks. 
-Interpreting Results:
-Slope (m):
-Represents the change in the dependent variable for each unit change in the independent variable.
-Intercept (b):
-Represents the predicted value of the dependent variable when the independent variable is zero. 
-Example:
-Imagine you want to predict a house's selling price based on its size. You could use linear regression. If the regression equation is Price = 1000 * Size + 50000, it suggests that for every additional square foot (increase in size), the price is predicted to increase by $1000, and a house with 0 square feet would have a predicted price of $50000 (which is not realistic in this context, but demonstrates the intercept). 
+text = """ First Order Differential Equations - In this chapter we will look at several of the standard solution methods for first order differential equations including linear, separable, exact and Bernoulli differential equations. We also take a look at intervals of validity, equilibrium solutions and Euler’s Method. In addition we model some physical situations with first order differential equations.
+Linear Equations – In this section we solve linear first order differential equations, i.e. differential equations in the form 
+y
+′
++
+p
+(
+t
+)
+y
+=
+g
+(
+t
+)
+. We give an in depth overview of the process used to solve this type of differential equation as well as a derivation of the formula needed for the integrating factor used in the solution process.
+Separable Equations – In this section we solve separable first order differential equations, i.e. differential equations in the form 
+N
+(
+y
+)
+y
+′
+=
+M
+(
+x
+)
+. We will give a derivation of the solution process to this type of differential equation. We’ll also start looking at finding the interval of validity for the solution to a differential equation.
+Exact Equations – In this section we will discuss identifying and solving exact differential equations. We will develop a test that can be used to identify exact differential equations and give a detailed explanation of the solution process. We will also do a few more interval of validity problems here as well.
+Bernoulli Differential Equations – In this section we solve Bernoulli differential equations, i.e. differential equations in the form 
+y
+′
++
+p
+(
+t
+)
+y
+=
+y
+n
+. This section will also introduce the idea of using a substitution to help us solve differential equations.
+Substitutions – In this section we’ll pick up where the last section left off and take a look at a couple of other substitutions that can be used to solve some differential equations. In particular we will discuss using solutions to solve differential equations of the form 
+y
+′
+=
+F
+(
+y
+x
+)
+ and 
+y
+′
+=
+G
+(
+a
+x
++
+b
+y
+)
+.
+Intervals of Validity – In this section we will give an in depth look at intervals of validity as well as an answer to the existence and uniqueness question for first order differential equations.
+Modeling with First Order Differential Equations – In this section we will use first order differential equations to model physical situations. In particular we will look at mixing problems (modeling the amount of a substance dissolved in a liquid and liquid both enters and exits), population problems (modeling a population under a variety of situations in which the population can enter or exit) and falling objects (modeling the velocity of a falling object under the influence of both gravity and air resistance).
+Equilibrium Solutions – In this section we will define equilibrium solutions (or equilibrium points) for autonomous differential equations, 
+y
+′
+=
+f
+(
+y
+)
+. We discuss classifying equilibrium solutions as asymptotically stable, unstable or semi-stable equilibrium solutions.
+Euler’s Method – In this section we’ll take a brief look at a fairly simple method for approximating solutions to differential equations. We derive the formulas used by Euler’s Method and give a brief discussion of the errors in the approximations of the solutions.
+
 """
 
-result = chain.invoke({'text':text})
+results = chain.invoke({'text':text})
 
-print(result)
+print(results)
