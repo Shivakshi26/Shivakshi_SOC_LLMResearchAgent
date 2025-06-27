@@ -5,5 +5,5 @@ load_dotenv()
 
 model = ChatOpenAI()
 
-result = model.invoke("what is the capital of india")
+result = model.invoke("When did Gandhi die?")
 print(result.content)
