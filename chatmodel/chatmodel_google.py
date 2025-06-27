@@ -5,6 +5,6 @@ load_dotenv()
 
 model = ChatGoogleGenerativeAI(model= "gemini-1.5-flash")
 
-result = model.invoke("what is the capital of india")
+result = model.invoke("when did Gandhi die?")
 
 print(result.content)
