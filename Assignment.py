@@ -8,7 +8,7 @@ from langchain.chains import RetrievalQA
 
 import os
 
-pdf_path = "zero to one novel.pdf"
+pdf_path = "/zero_to_one_novel.pdf"
 loader = PyPDFLoader(pdf_path)
 pages = loader.load()
 
